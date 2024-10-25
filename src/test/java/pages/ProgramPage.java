@@ -1,17 +1,23 @@
 package pages;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import factory.DriverFactory;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
 public class ProgramPage {
 	
-public WebDriver driver;
+//public WebDriver driver;
+private WebDriver driver = DriverFactory.getDriver();
+String programURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/program";
+String dashboardURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com";
 	
 	//constructor
-	public ProgramPage(WebDriver driver) {
-		this.driver = driver;
+	public ProgramPage() {
+		//this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}
 
@@ -46,6 +52,19 @@ public WebDriver driver;
 @FindBy (xpath="//button[@ng-reflect-label='Cancel']") WebElement radiobtn_cancel;
  @FindBy(id = "saveProgram") WebElement radiobtn_save;
  
- 
+   public void getprogrampage() 
+    {		
+		driver.get(programURL);
+	}
+   
+   public void getdashboardpage() 
+    {		
+		driver.get(dashboardURL);
+	}
+   
+   public void getProgram()
+   {
+	  // programlink.click();
+	}
  
 }
