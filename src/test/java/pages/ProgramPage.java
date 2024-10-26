@@ -10,15 +10,14 @@ import org.openqa.selenium.WebElement;
 
 public class ProgramPage {
 	
-//public WebDriver driver;
 private WebDriver driver = DriverFactory.getDriver();
 String programURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/program";
 String dashboardURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com";
 	
 	//constructor
-	public ProgramPage() {
-		//this.driver = driver;
-		PageFactory.initElements(driver,this);
+	public ProgramPage()
+	{
+				PageFactory.initElements(driver,this);
 	}
 
 	@FindBy(linkText="Program") WebElement programlink1;
@@ -64,7 +63,7 @@ String dashboardURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokua
    
    public void getProgram()
    {
-	  // programlink.click();
+	 // programlink.click();
 	}
  
 }
