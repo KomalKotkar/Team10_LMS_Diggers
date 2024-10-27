@@ -1,9 +1,11 @@
 #Author: your.email@your.domain.com
 
-@program
+@program1
 Feature: Program page  
   
 Background: Admin is logged in to LMS Portal	
+  
+  #Navigation and Menu bar
   
 Scenario:1 Verify that Admin is able to navigate to Program module
 Given Admin is on dashboard page after Login	
@@ -34,6 +36,8 @@ Scenario:6 Verify sub menu displayed in program menu bar
 Given Admin is on program page
 When Admin clicks "Program" on the navigation bar	
 Then Admin should see sub menu in menu bar as "Add New Program"
+
+# Manage Program Page Validation
 
 Scenario:7 Verify heading in manage program
 Given Admin is on dashboard page after Login

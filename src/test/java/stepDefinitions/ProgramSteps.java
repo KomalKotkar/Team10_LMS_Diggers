@@ -11,7 +11,7 @@ public class ProgramSteps {
 	
 	ProgramPage ProgramPage = new ProgramPage();
 	
-	
+	/* #Navigation and Menu bar */
 	
 	@Given("Admin is on dashboard page after Login")
 	public void admin_is_on_dashboard_page_after_login() {
@@ -34,6 +34,8 @@ public class ProgramSteps {
 	public void admin_should_not_have_any_broken_links_for_program_module() {
 		ProgramPage.getprogrampage();
 	}
+	
+	/* --------- # Manage Program Page Validation ---------- */
 
 	@Then("Admin should see the heading {string}")
 	public void admin_should_see_the_heading(String string) {
@@ -109,8 +111,212 @@ public class ProgramSteps {
 	public void string_string(String string, String string2) {
 	   
 	}
+/*------------------------------------------------------------------------------------------*/
+	/*-------  # Menu bar Program - Add New Program ----------------------   */
+	
+	@Given("Admin is on Program module")
+	public void admin_is_on_program_module() {
+	   
+	}
+
+	@When("Admin clicks on {string} under the {string} menu bar")
+	public void admin_clicks_on_under_the_menu_bar(String string, String string2) {
+	   
+	}
+
+	@Then("Admin should see pop up window for program details")
+	public void admin_should_see_pop_up_window_for_program_details() {
+	    
+	}
+
+	@Then("Admin should see window title as {string}")
+	public void admin_should_see_window_title_as(String string) {
+	    
+	}
+
+	@Then("Admin should see red {string} mark beside mandatory field {string}")
+	public void admin_should_see_red_mark_beside_mandatory_field(String string, String string2) {
+	    
+	}
+
+	@Given("Admin is on Program details form")
+	public void admin_is_on_program_details_form() {
+	    
+	}
+
+	@When("Admin clicks save button without entering mandatory")
+	public void admin_clicks_save_button_without_entering_mandatory() {
+	    
+	}
+
+	@Then("Admin gets message {string}")
+	public void admin_gets_message(String string) {
+	    
+	}
+
+	@When("Admin clicks Cancel button")
+	public void admin_clicks_cancel_button() {
+	    
+	}
+
+	@Then("Admin can see Program Details form disappears")
+	public void admin_can_see_program_details_form_disappears() {
+	    
+	}
+
+ 	@Given("Admin is on program details form")
+	public void admin_is_on_program_details_form() {
+	    
+	} 
+
+	@When("Admin enters the Name in the text box")
+	public void admin_enters_the_name_in_the_text_box() {
+	    
+	}
+
+	@Then("Admin can see the text entered")
+	public void admin_can_see_the_text_entered() {
+	    
+	}
+
+	@When("Admin enters the Description in text box")
+	public void admin_enters_the_description_in_text_box() {
+	   
+	}
+
+	@Then("Admin can see the text entered in description box")
+	public void admin_can_see_the_text_entered_in_description_box() {
+	   
+	}
+
+	@When("Admin selects the status of the program by clicking on the radio button {string}")
+	public void admin_selects_the_status_of_the_program_by_clicking_on_the_radio_button(String string) {
+	    
+	}
+
+	@Then("Admin can see {string} status selected")
+	public void admin_can_see_status_selected(String string) {
+	   
+	}
+
+	@When("Admin enter valid details for mandatory fields and Click on save button")
+	public void admin_enter_valid_details_for_mandatory_fields_and_click_on_save_button() {
+	   
+	}
+
+	@When("Admin Click on cancel button")
+	public void admin_click_on_cancel_button() {
+	   
+	}
+
+	@Then("Admin can see program details form disappear")
+	public void admin_can_see_program_details_form_disappear() {
+	   
+	}
+
+	@When("Admin searches with newly created {string}")
+	public void admin_searches_with_newly_created(String string) {
+	   
+	}
+
+	@Then("Records of the newly created  {string} is displayed and match the data entered")
+	public void records_of_the_newly_created_is_displayed_and_match_the_data_entered(String string) {
+	    
+	}
+
+	@When("Admin Click on {string} button")
+	public void admin_click_on_button(String string) {
+	   
+	}
+	
+	@Given("Admin is on program details form")
+	public void admin_is_on_program_details_form() {
+	   
+	}
+
+  /* -------------------------- Manage Program - Edit Program ----------------------------- */
+	
+	@Given("Admin is on program details form")
+	public void admin_is_on_program_details_form() {
+	    
+	} 
+
+	@When("Admin clicks on Edit option for particular program")
+	public void admin_clicks_on_edit_option_for_particular_program() {
+	    
+	}
+
+	@Then("Admin lands on Program details form")
+	public void admin_lands_on_program_details_form() {
+	    
+	}
+
+	@When("Admin edits the program name and click on save button")
+	public void admin_edits_the_program_name_and_click_on_save_button() {
+	    
+	}
+
+	@Then("Updated program name is seen by the Admin")
+	public void updated_program_name_is_seen_by_the_admin() {
+	    
+	}
+
+	@When("Admin edits the description text and click on save button")
+	public void admin_edits_the_description_text_and_click_on_save_button() {
+	   
+	}
+
+	@Then("Admin can see the description is updated")
+	public void admin_can_see_the_description_is_updated() {
+	   
+	}
+
+	@When("Admin can change the status of the program and click on save button")
+	public void admin_can_change_the_status_of_the_program_and_click_on_save_button() {
+	   
+	}
+
+	@Then("Status updated can be viewed by the Admin")
+	public void status_updated_can_be_viewed_by_the_admin() {
+	   
+	}
+
+	@When("Admin click on save button")
+	public void admin_click_on_save_button() {
+	    
+	}
+
+	@Then("Admin can see the updated program details")
+	public void admin_can_see_the_updated_program_details() {
+	   
+	}
+
+	@When("Admin click on cancel button")
+	public void admin_click_on_cancel_button() {
+	    
+	}
 
 
+	@Then("Admin can see the Program details form disappears")
+	public void admin_can_see_the_program_details_form_disappears() {
+	   
+	}
 
+	@When("Admin searches with newly updated {string}")
+	public void admin_searches_with_newly_updated(String string) {
+	    
+	}
 
+	@Then("Admin verifies that the details are correctly updated.")
+	public void admin_verifies_that_the_details_are_correctly_updated() {
+	    
+	}
+	
+	
+	@When("Admin clicks on cancel button")
+	public void admin_clicks_on_cancel_button() {
+	    
+	}
+
+	/* ------------------------------------------------------------------- */
 }
