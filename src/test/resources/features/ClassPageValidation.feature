@@ -11,7 +11,7 @@ Background: Admin Is on the Dashboard page after login
   Scenario: Validating the Title in the class page
   	Given Admin Is on the Dashboard page after login
   	When Admin clicks the Class button on Navigation bar
-  	Then Admin should see the LMS-Learning Management System Title
+  	Then Admin should see the LMS Title
   	
   	Scenario: Validating Search bar in class page
   	Given Admin Is on the Dashboard page after login
@@ -27,11 +27,12 @@ Background: Admin Is on the Dashboard page after login
   	Given Admin Is on the Dashboard page after login
   	When Admin clicks the Class button on Navigation bar
   	Then Admin should see the showing x to y of z entries and enabled pagination controls under the data table
-  	
-  	Scenario: Validate the sort icon of all the field in datatable
-  	Given Admin Is on the Dashboard page after login
-  	When Admin clicks the Class button on Navigation bar
-  	Then Admin should see the Sort icon of all the field in the datatable
+  
+  #	Bhagyashri will do sorting
+  #	Scenario: Validate the sort icon of all the field in datatable
+  #	Given Admin Is on the Dashboard page after login
+  #	When Admin clicks the Class button on Navigation bar
+  #	Then Admin should see the Sort icon of all the field in the datatable
 
   	Scenario: Validating the Delete button under the Manage class
   	Given Admin Is on the Dashboard page after login
