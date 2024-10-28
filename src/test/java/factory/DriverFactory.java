@@ -2,6 +2,7 @@ package factory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -14,7 +15,10 @@ public class DriverFactory {
 			
 		if(browserName.equals("chrome"))
 			{
-				driver = new ChromeDriver();
+			//driver = new ChromeDriver();
+			ChromeOptions ChromeOpt = new ChromeOptions();
+			ChromeOpt.addArguments("--headless=new");
+			driver = new ChromeDriver(ChromeOpt);
 			} else if(browserName.equals("edge"))
 			{
 				driver = new EdgeDriver();
