@@ -6,6 +6,7 @@ import factory.DriverFactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import log.LoggerLoad;
 
 
 public class ProgramPage {
@@ -65,5 +66,12 @@ String dashboardURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokua
    {
 	 // programlink.click();
 	}
+   
+   public void verifyHeaderText(String expheaderTxt) {
+	//	LoggerLoad.info("Admin see the header Text");
+	//	assertEquals(manageprogramheader.getText(), expheaderTxt);
+	}
+   
+   
  
 }
