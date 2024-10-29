@@ -1,28 +1,29 @@
 package stepDefinitions;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.asserts.SoftAssert;
+import org.testng.Assert;
 
 import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.LoginPage;
+import utilities.LoggerLoad;
 
 public class LoginSteps {
 	WebDriver driver = DriverFactory.getDriver();
 	LoginPage loginPage = new LoginPage(driver);
-	SoftAssert Assert = new SoftAssert();
 	
 	@Given("Admin launches the browser")
 	public void admin_launch_the_browser() {
-	   System.out.println("Launching browser");
+	   LoggerLoad.info("Launching browser");
 	}
 
 	@When("Admin gives the correct LMS portal URL")
 	public void admin_gives_the_correct_lms_portal_url() {
-		System.out.println("Launched portal :"+driver.getTitle());
+		LoggerLoad.info("Launched portal :"+driver.getTitle());
 	}
 	
 	//@Login_s1
@@ -108,7 +109,7 @@ public class LoginSteps {
 	//@Login_s16
 	@Given("Admin is in login Page")
 	public void admin_is_in_login_page() {
-	  
+		System.out.println("Launched portal :"+driver.getTitle());
 	}
 
 	@When("Admin enter valid credentials  and clicks login button")
@@ -118,9 +119,76 @@ public class LoginSteps {
 	   loginPage.clickLogin();
 	}
 
-	@Then("Admin should land on dashboard page \\( centre of the page will be empty , menu bar is present)")
-	public void admin_should_land_on_dashboard_page_centre_of_the_page_will_be_empty_menu_bar_is_present() {
+	@Then("Admin should land on dashboard page with centre of the page will be empty , menu bar is present")
+	public void admin_should_land_on_dashboard_page_with_centre_of_the_page_will_be_empty_menu_bar_is_present() {
 	   Assert.assertTrue(loginPage.validateDashboardHeading());
 	}
-
+	
+	//@Login_s17
+	@When("Admin enter invalid credentials  and clicks login button")
+	public void admin_enter_invalid_credentials_and_clicks_login_button() {
+	    loginPage.enterUsername("InvalidUsername");
+	    loginPage.enterPassword("InvalidPassword");
+	    loginPage.clickLogin();
+	}
+	
+	@Then("Error message please check Adminname\\/password")
+	public void error_message_please_check_adminname_password() {
+		Assert.assertTrue(loginPage.errorMsgValidation());
+	}
+	//@Login_s18
+	@When("Admin enter value only in password and clicks login button")
+	public void admin_enter_value_only_in_password_and_clicks_login_button() {
+		 loginPage.enterPassword("ValidPassword");
+		 loginPage.clickLogin();
+	}
+		
+	//@Login_s19
+	@When("Admin enter value only in Adminname and clicks login button")
+	public void admin_enter_value_only_in_adminname_and_clicks_login_button() {
+		 loginPage.enterUsername("ValidUsername");
+		 loginPage.clickLogin();
+	}
+	//@Login_s20
+	@When("Admin enter valid credentials  and clicks login button through keyboard")
+	public void admin_enter_valid_credentials_and_clicks_login_button_through_keyboard() throws InterruptedException {
+	   loginPage.loginActionUsingKeyboard("ValidUsername","ValidPassword");
+	}
+	@Then("Admin should land on dashboard page")
+	public void admin_should_land_on_dashboard_page() {
+		 Assert.assertTrue(loginPage.validateDashboardHeading());
+	}
+	
+	//@Login_s21
+	@When("Admin enter valid credentials  and clicks login button through mouse")
+	public void admin_enter_valid_credentials_and_clicks_login_button_through_mouse() {
+	   loginPage.loginActionUsingMouse();
+	}
+	
+	//@Login_s22
+	@Then("Admin should land on the login page")
+	public void admin_should_land_on_the_login_page() {
+		Assert.assertTrue(loginPage.validateDashboardHeading());
+	}
+	
+	//@Login_s23
+	@When("Admin gives the invalid LMS portal URL")
+	public void admin_gives_the_invalid_lms_portal_url() {
+		   loginPage.launchUrl("InvalidUrlLMS");
+	}
+	@Then("Admin should recieve {int} page not found error")
+	public void admin_should_recieve_page_not_found_error(Integer expectedErrorCode) throws MalformedURLException, IOException {
+		Assert.assertEquals(expectedErrorCode,loginPage.actualResponseCode());	
+	}
+	
+	//@Login_s24
+	@When("Admin gives the correct LMS portal in URL")
+	public void admin_gives_the_correct_lms_portal_in_url() {
+		loginPage.launchUrl("ValidUrlLMS");
+	}
+	@Then("HTTP response >= {int} the link is broken")
+	public void the_link_is_broken(Integer expectedResponsecode) throws MalformedURLException, IOException {
+		int resCode = loginPage.actualResponseCode();
+		Assert.assertFalse(resCode >= expectedResponsecode, "The link is broken");
+	}	
 }

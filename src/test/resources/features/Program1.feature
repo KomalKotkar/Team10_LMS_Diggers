@@ -87,7 +87,7 @@ Then Admin should see the Edit and Delete buttons on each row of the data table
 Scenario:16 Verify pagination icons below data table in manage program	
 Given Admin is on dashboard page after Login	
 When Admin clicks "Program" on the navigation bar	
-Then "Admin should see the text as ""Showing x to y of z entries"" along with Pagination icon below the table.
+Then Admin should see the text as "Showing x to y of z entries" along with Pagination icon below the table.
 #x- starting record number on that page
 #y-ending record number on that page
 #z-Total number of records"
@@ -95,6 +95,6 @@ Then "Admin should see the text as ""Showing x to y of z entries"" along with Pa
 Scenario:17 Verify footer message in manage program	
 Given Admin is on dashboard page after Login	
 When Admin clicks "Program" on the navigation bar	
-Then "Admin should see the footer as ""In total there are z programs"".
+Then Admin should see the footer as "In total there are z programs".
 #z- Total number of records"
 
