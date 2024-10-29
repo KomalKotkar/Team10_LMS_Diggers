@@ -30,7 +30,6 @@ import java.io.File;
 
 import utilities.FileUtil;
 import utilities.LoggerLoad;
-import utilities.TestDataReader;
 
 public class LoginPage {
 
