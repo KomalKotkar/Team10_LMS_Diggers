@@ -68,6 +68,5 @@
     <artifactId>cucumber-testng</artifactId>
     <version>7.17.0</version>
 </dependency>
-
   </dependencies>
 </project>

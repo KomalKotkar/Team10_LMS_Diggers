@@ -1,40 +1,67 @@
 package stepDefinitions;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.WebDriver;
+
+import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.AddNewClassPage;
+import pages.ClassPageValidationPage;
+import pages.LoginPage;
+import utilities.ExcelReader;
 
 public class AddNewClassStep {
 
+	WebDriver driver = DriverFactory.getDriver();
+	LoginPage loginPage = new LoginPage(driver);
+	ClassPageValidationPage classPageValidationPage = new ClassPageValidationPage(driver);
+	AddNewClassPage addNewClassPage = new AddNewClassPage(driver);
 	
 	@Given("Admin is on the Manage class page")
 	public void admin_is_on_the_manage_class_page() {
-	   
+		loginPage.enterUsername("Sdet@gmail.com");
+		loginPage.enterPassword("LmsHackathon@2024");
+		loginPage.clickLogin();
+		classPageValidationPage.clickOnClassButton();
+		
 	}
 
 	@When("Admin click on add new class under the class menu bar")
 	public void admin_click_on_add_new_class_under_the_class_menu_bar() {
-	   
+		classPageValidationPage.clickOnAddNewClassButton();
 	}
 
 	@Then("Admin should see a popup for class details with empty form along with SAVE and CANCEL button and Close Icon button on the top right corner")
 	public void admin_should_see_a_popup_for_class_details_with_empty_form_along_with_save_and_cancel_button_and_close_icon_button_on_the_top_right_corner() {
-	    
+		addNewClassPage.verifyPopupDispayedWithFeatures();
 	}
 
 	@Then("Admin should see all input fields and their respective text boxes in the class details window")
 	public void admin_should_see_all_input_fields_and_their_respective_text_boxes_in_the_class_details_window() {
-	   
+		addNewClassPage.verifyPopupWithInputCheckboxes();
 	}
 
 	@Given("Admin is on the Class Details Popup window")
 	public void admin_is_on_the_class_details_popup_window() {
-	   
+		classPageValidationPage.clickOnAddNewClassButton();
 	}
 
 	@When("Admin enters mandatory fields in the form and clicks on save button")
 	public void admin_enters_mandatory_fields_in_the_form_and_clicks_on_save_button() {
-	   
+//		System.out.println("admin_enters_mandatory_fields_in_the_form_with_and_and_clicks_on_save_button");
+//		ExcelReader reader = new ExcelReader();
+//		List<Map<String,String>> testData = 
+//				reader.getData("src/test/resources/TestData/testData.xlsx", sheetName);
+//		System.out.println("testData  "+testData);
+//		String classTopic = testData.get(rowNumber).get("classTopic");
+//		System.out.println("classTopic  "+classTopic);
+		addNewClassPage.fillClassTopic();
 	}
 
 	@Then("Admin gets message Class added Successfully")
@@ -79,8 +106,7 @@ public class AddNewClassStep {
 
 	@Then("Admin gets error message and class is not created")
 	public void admin_gets_error_message_and_class_is_not_created() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	   
 	}
 
 	@Given("Admin is on the Class Popup window")
@@ -90,8 +116,7 @@ public class AddNewClassStep {
 
 	@When("Admin clicks on save button without entering data")
 	public void admin_clicks_on_save_button_without_entering_data() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	   
 	}
 
 	@Then("Admin gets error message below mandatory fields required")

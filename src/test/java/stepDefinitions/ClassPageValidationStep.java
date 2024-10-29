@@ -16,6 +16,7 @@ public class ClassPageValidationStep {
 	LoginPage loginPage = new LoginPage(driver);
 	ClassPageValidationPage classPageValidationPage = new ClassPageValidationPage(driver);
 	
+	
 	@Given("Admin Is on the Dashboard page after login")
 	public void admin_is_on_the_dashboard_page_after_login() {
 		   loginPage.enterUsername("Sdet@gmail.com");
