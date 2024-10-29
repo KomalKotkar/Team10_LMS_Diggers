@@ -1,16 +1,18 @@
 package pages;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.asserts.SoftAssert;
 
 import factory.DriverFactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import log.LoggerLoad;
+import utilities.LoggerLoad;
 
 
 public class ProgramPage {
 	
+	SoftAssert Assert = new SoftAssert();
 private WebDriver driver = DriverFactory.getDriver();
 String programURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/program";
 String dashboardURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com";
@@ -35,7 +37,7 @@ String dashboardURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokua
     @FindBy (xpath="//input[@id='filterGlobal']") WebElement search;
     
     //Footer in total there are 33 programs
-    @FindBy(xpath="//div[@class='p-datatable-footer ng-star-inserted']") WebElement errMsg;
+    @FindBy(xpath="//div[@class='p-datatable-footer ng-star-inserted']") WebElement footerMsg;
     
     
     
@@ -60,6 +62,9 @@ String dashboardURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokua
    public void getdashboardpage() 
     {		
 		driver.get(dashboardURL);
+		//String curnturl = driver.getCurrentUrl();
+		//if (curnturl == dashboardURL)
+			//LoggerLoad.info("Admin is on the dashboard page");
 	}
    
    public void getProgram()
@@ -68,10 +73,17 @@ String dashboardURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokua
 	}
    
    public void verifyHeaderText(String expheaderTxt) {
-	//	LoggerLoad.info("Admin see the header Text");
-	//	assertEquals(manageprogramheader.getText(), expheaderTxt);
+		//LoggerLoad.info("Admin see the header Text");
+	//	Assert.assertEquals(manageprogramheader.getText(), expheaderTxt);
 	}
    
-   
+   public void verifySearchText(String searchTxt) {
+		//LoggerLoad.info("Admin see the Search Text box has text as \"Search\"");
+		//Assert.assertEquals(search.getText(), searchTxt);
+	}
  
+   public void verifyFooterText(String expfooterTxt) {
+		//LoggerLoad.info("Admin see the footer Text");
+		//Assert.assertEquals(footerMsg.getText(), expfooterTxt);
+	}
 }
