@@ -2,29 +2,46 @@
 <testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-29T14:12:12 PDT" name="Default suite" finished-at="2024-10-29T14:12:13 PDT" duration-ms="1069">
+  <suite started-at="2024-10-29T14:48:58 PDT" name="Default suite" finished-at="2024-10-29T14:48:59 PDT" duration-ms="1016">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@22d7b4f8]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-10-29T14:12:12 PDT" name="Default test" finished-at="2024-10-29T14:12:13 PDT" duration-ms="1069">
+    <test started-at="2024-10-29T14:48:58 PDT" name="Default test" finished-at="2024-10-29T14:48:59 PDT" duration-ms="1016">
       <class name="runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@22d7b4f8]" started-at="2024-10-29T14:12:12 PDT" name="setUpClass" finished-at="2024-10-29T14:12:13 PDT" duration-ms="739" status="FAIL">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@22d7b4f8]" started-at="2024-10-29T14:48:58 PDT" name="setUpClass" finished-at="2024-10-29T14:48:58 PDT" duration-ms="754" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5f303ecd]]>
+                <![CDATA[org.testng.TestRunner@c6a6c1d]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
+          <exception class="io.cucumber.core.gherkin.FeatureParserException">
             <message>
-              <![CDATA[path must exist: /Users/bhagyashri/git/Team10_LMS_Diggers/src/test/resources/feature]]>
+              <![CDATA[Failed to parse resource at: file:///Users/bhagyashri/git/Team10_LMS_Diggers/src/test/resources/features/Batch-LogOut.feature
+(1:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got 'FEATURE: LogOut of the application from the batch page'
+(2:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got 'Scenario : Validate logout option in the header is visible and enabled from the batch page'
+(3:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got 'Given  Admin is on the Batch page'
+(4:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got 'When Admin clicks on the logout button'
+(5:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got 'Then Admin should see the Login screen Page']]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: path must exist: /Users/bhagyashri/git/Team10_LMS_Diggers/src/test/resources/feature
-at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:49)
+              <![CDATA[io.cucumber.core.gherkin.FeatureParserException: Failed to parse resource at: file:///Users/bhagyashri/git/Team10_LMS_Diggers/src/test/resources/features/Batch-LogOut.feature
+(1:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got 'FEATURE: LogOut of the application from the batch page'
+(2:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got 'Scenario : Validate logout option in the header is visible and enabled from the batch page'
+(3:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got 'Given  Admin is on the Batch page'
+(4:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got 'When Admin clicks on the logout button'
+(5:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got 'Then Admin should see the Login screen Page'
+at io.cucumber.core.gherkin.messages.GherkinMessagesFeatureParser.parse(GherkinMessagesFeatureParser.java:56)
+at io.cucumber.core.feature.FeatureParser.parseResource(FeatureParser.java:46)
+at java.base/java.util.function.BiFunction.lambda$andThen$0(BiFunction.java:70)
+at io.cucumber.core.resource.ResourceScanner.lambda$processResource$1(ResourceScanner.java:79)
+at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:75)
+at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:60)
+at java.base/java.nio.file.Files.walkFileTree(Files.java:2804)
+at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:53)
 at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:31)
 at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)
 at io.cucumber.core.resource.ResourceScanner.scanForResourcesUri(ResourceScanner.java:134)
@@ -60,11 +77,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- io.cucumber.core.gherkin.FeatureParserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@22d7b4f8]" started-at="2024-10-29T14:12:13 PDT" name="tearDownClass" finished-at="2024-10-29T14:12:13 PDT" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@22d7b4f8]" started-at="2024-10-29T14:48:59 PDT" name="tearDownClass" finished-at="2024-10-29T14:48:59 PDT" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

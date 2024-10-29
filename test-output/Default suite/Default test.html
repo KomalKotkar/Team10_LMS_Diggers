@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Oct 29 14:12:12 PDT 2024</td>
+<td>Started on:</td><td>Tue Oct 29 14:48:58 PDT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>1 seconds (1069 ms)</td>
+<tr><td>Total time:</td><td>1 seconds (1016 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,9 +76,21 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runner.TestRunner.setUpClass()'><b>setUpClass</b><br>Test class: runner.TestRunner<br>Parameters: org.testng.TestRunner@5f303ecd</td>
-<td><div><pre>java.lang.IllegalArgumentException: path must exist: /Users/bhagyashri/git/Team10_LMS_Diggers/src/test/resources/feature
-	at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:49)
+<td title='runner.TestRunner.setUpClass()'><b>setUpClass</b><br>Test class: runner.TestRunner<br>Parameters: org.testng.TestRunner@c6a6c1d</td>
+<td><div><pre>io.cucumber.core.gherkin.FeatureParserException: Failed to parse resource at: file:///Users/bhagyashri/git/Team10_LMS_Diggers/src/test/resources/features/Batch-LogOut.feature
+(1:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got &apos;FEATURE: LogOut of the application from the batch page&apos;
+(2:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got &apos;Scenario : Validate logout option in the header is visible and enabled from the batch page&apos;
+(3:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got &apos;Given  Admin is on the Batch page&apos;
+(4:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got &apos;When Admin clicks on the logout button&apos;
+(5:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got &apos;Then Admin should see the Login screen Page&apos;
+	at io.cucumber.core.gherkin.messages.GherkinMessagesFeatureParser.parse(GherkinMessagesFeatureParser.java:56)
+	at io.cucumber.core.feature.FeatureParser.parseResource(FeatureParser.java:46)
+	at java.base/java.util.function.BiFunction.lambda$andThen$0(BiFunction.java:70)
+	at io.cucumber.core.resource.ResourceScanner.lambda$processResource$1(ResourceScanner.java:79)
+	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:75)
+	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:60)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2804)
+	at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:53)
 	at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:31)
 	at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)
 	at io.cucumber.core.resource.ResourceScanner.scanForResourcesUri(ResourceScanner.java:134)
@@ -113,8 +125,20 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div><a href='#' onClick='toggleBox("stack-trace544386226", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace544386226'><pre>java.lang.IllegalArgumentException: path must exist: /Users/bhagyashri/git/Team10_LMS_Diggers/src/test/resources/feature
-	at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:49)
+<div class='stack-trace' id='stack-trace544386226'><pre>io.cucumber.core.gherkin.FeatureParserException: Failed to parse resource at: file:///Users/bhagyashri/git/Team10_LMS_Diggers/src/test/resources/features/Batch-LogOut.feature
+(1:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got &apos;FEATURE: LogOut of the application from the batch page&apos;
+(2:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got &apos;Scenario : Validate logout option in the header is visible and enabled from the batch page&apos;
+(3:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got &apos;Given  Admin is on the Batch page&apos;
+(4:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got &apos;When Admin clicks on the logout button&apos;
+(5:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got &apos;Then Admin should see the Login screen Page&apos;
+	at io.cucumber.core.gherkin.messages.GherkinMessagesFeatureParser.parse(GherkinMessagesFeatureParser.java:56)
+	at io.cucumber.core.feature.FeatureParser.parseResource(FeatureParser.java:46)
+	at java.base/java.util.function.BiFunction.lambda$andThen$0(BiFunction.java:70)
+	at io.cucumber.core.resource.ResourceScanner.lambda$processResource$1(ResourceScanner.java:79)
+	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:75)
+	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:60)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2804)
+	at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:53)
 	at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:31)
 	at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)
 	at io.cucumber.core.resource.ResourceScanner.scanForResourcesUri(ResourceScanner.java:134)
