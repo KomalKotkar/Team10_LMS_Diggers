@@ -1,14 +1,16 @@
 package pages;
 
 import java.util.List;
-
-import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import utilities.LoggerLoad;
 
 public class BatchPage {
 	WebDriver driver;
@@ -34,7 +36,7 @@ public class BatchPage {
 	@FindBy(xpath = "//span[text()=' LMS - Learning Management System ']")
 	private WebElement LMSlogo;
 
-	@FindBy(id ="filterGlobal")
+	@FindBy(xpath="//input[@id='filterGlobal']")
 	private WebElement searchButton;
 	
 	@FindBy(xpath="//div[text()=' Manage Batch']/following::div[3]")
@@ -181,7 +183,7 @@ public class BatchPage {
 			firstProgramNameOption.click();
 			// Thread.sleep(2000);
 			String batch_name = batchNamePrefix.getText();
-			System.out.println(batch_name);
+			//System.out.println(batch_name);
 		}
 	}
 
@@ -195,7 +197,8 @@ public class BatchPage {
 			errorMessageforBatchnumber.click();
 			String error_msg = errorMessageforBatchnumber.getText();
 			Assert.assertEquals(error_msg, "This field accept only numbers and max 5 count.");
-			System.out.println("batch name suffix box accepts only numbers");
+			LoggerLoad.info("batch name suffix box accepts only numbers");
+			//System.out.println("batch name suffix box accepts only numbers");
 		}
 	}
 
@@ -204,9 +207,11 @@ public class BatchPage {
 		String prefix = batchNamePrefix.getAttribute("readonly");
 		System.out.println(prefix);
 		if (prefix.equals("true")) {
-			System.out.println("batch name prefix box is not editable");
+			LoggerLoad.info("batch name prefix box is not editable");
+			//System.out.println("batch name prefix box is not editable");
 		} else {
-			System.out.println("batch name prefix box is editable");
+			LoggerLoad.info("batch name prefix box is editable");
+			//System.out.println("batch name prefix box is editable");
 		}
 	}
 
@@ -241,8 +246,12 @@ public class BatchPage {
 		noOfClassesInput.click();
 		noOfClassesInput.sendKeys("5");
 		saveButton.click();
+		editsuccessfulmsg.click();
+		String msg= editsuccessfulmsg.getText();
+		LoggerLoad.info(msg);
 		if (manageBatch.isDisplayed()) {
-			System.out.println("New Batch Details saved");
+			LoggerLoad.info("New Batch Details saved");
+			//System.out.println("New Batch Details saved");
 		}
 	}
 
@@ -258,7 +267,7 @@ public class BatchPage {
 		selectStatus.click();
 		cancelButton.click();
 		if (manageBatch.isDisplayed()) {
-			System.out.println("New Batch Details cancelled");
+			LoggerLoad.info("New Batch Details cancelled");
 		}
 	}
 
@@ -268,17 +277,18 @@ public class BatchPage {
 		batchDescription.click();
 		closeButton.click();
 		if (manageBatch.isDisplayed()) {
-			System.out.println("Batch details closed without creating new batch");
+			LoggerLoad.info("New Batch Details cancelled");
+			//System.out.println("Batch details closed without creating new batch");
 		}
 	}
 
 	// Page Navigation methods
 	public void checkLogoOnBatchPage() {
 		if (manageBatch.isDisplayed()) {
-			// LoggerLoad.info("Landed on Batch Page")
+		LoggerLoad.info("Landed on Batch Page");
 		}
 		if (LMSlogo.isDisplayed()) {
-			// LoggerLoad.info("LMS logo is visible")
+			LoggerLoad.info("LMS logo is visible");
 		}
 	}
 
@@ -317,7 +327,9 @@ public class BatchPage {
 	
 	public void searchBatch() {
 		checkaddNewBatch();
-		searchSpan.click();
+		//WebDriverWait wait = new WebDriverWait(driver, 10);
+		//wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+		//searchSpan.click();
 		searchButton.click();
 		searchButton.sendKeys("SMP");
 	}
@@ -335,7 +347,8 @@ public class BatchPage {
 		String pm= ProgramNameInput.getAttribute("disabled");
 		if(pm.equals("true"))
 		{
-			System.out.println("Program Name is uneditable");
+			LoggerLoad.info("Program Name is uneditable");
+			//System.out.println("Program Name is uneditable");
 		}
 	}
 		
@@ -344,7 +357,8 @@ public class BatchPage {
 			String bn= batchNameInput.getAttribute("disabled");
 			if(bn.equals("true"))
 			{
-				System.out.println("Batch Name is uneditable");
+				LoggerLoad.info("Batch Name is uneditable");
+				//System.out.println("Batch Name is uneditable");
 			}
 	}
 		
@@ -359,7 +373,8 @@ public class BatchPage {
 			String err= noOfClassesInput.getText();
 			if(err.contains("Number of classes is required"))
 			{
-				System.out.println("Encountered Error");
+				LoggerLoad.info("Encountered Error for Mandatory field");
+				//System.out.println("Encountered Error");
 			}
 			
 	}
@@ -370,7 +385,6 @@ public class BatchPage {
 			editsaveButton.click();
 			editsuccessfulmsg.click();
 			Assert.assertEquals(editedfield.getText(), "batch");
-			
 			
 			}
 			
