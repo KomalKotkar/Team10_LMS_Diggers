@@ -22,38 +22,38 @@ When Admin clicks on "New Program" under the "Program" menu bar
 Then Admin should see red "*" mark beside mandatory field "Name"
 
 Scenario:21 Verify empty form submission	
-Given Admin is on Program details form	
+Given Admin is on Prog details form	
 When Admin clicks save button without entering mandatory 	
 Then Admin gets message '<field> is required'
 
 Scenario:22 Verify cancel button	
-Given Admin is on Program details form	
+Given Admin is on Prog details form	
 When Admin clicks Cancel button	
 Then Admin can see Program Details form disappears
 
 Scenario:23 Verify enter program name	
-Given Admin is on Program details form	
+Given Admin is on Prog details form	
 When Admin enters the Name in the text box	
 Then Admin can see the text entered
 
 Scenario:24 Verify enter description	
-Given Admin is on Program details form	
+Given Admin is on Prog details form	
 When Admin enters the Description in text box	
 Then Admin can see the text entered in description box
 
 Scenario:25 Verify select Status	
-Given Admin is on Program details form	
+Given Admin is on Prog details form	
 When Admin selects the status of the program by clicking on the radio button "(Active/InActive)"	
 Then Admin can see 'Active/Inactive' status selected
 
 Scenario:26 Verify Admin is able to save the program details	
-Given Admin is on Program details form	
+Given Admin is on Prog details form	
 When Admin enter valid details for mandatory fields and Click on save button	
 Then Admin gets message 'Successful Program created'
 
 Scenario:27 Verify cancel program details	
-Given Admin is on Program details form	
-When Admin Click on cancel button	
+Given Admin is on Prog details form	
+When Admin Click on Prog details cancel button	
 Then Admin can see program details form disappear
 
 Scenario:28 Verify added Program is created	
@@ -62,7 +62,7 @@ When Admin searches with newly created "Program Name"
 Then Records of the newly created  "Program Name" is displayed and match the data entered
 
 Scenario:29 Verify close window with "X" 	
-Given Admin is on Program details form	
+Given Admin is on Prog details form	
 When Admin Click on "X" button	
 Then Admin can see program details form disappear
 

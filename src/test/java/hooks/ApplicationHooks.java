@@ -41,6 +41,6 @@ public class ApplicationHooks {
 			String destinationPath = System.getProperty("user.dir")+"\\screenshots\\"+scenarioName+".png";
 			FileUtils.copyFile(screenShot, new File(destinationPath));
 		}
-	driver.quit();
+	//driver.quit();
 	}
 }
