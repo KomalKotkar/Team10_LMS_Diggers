@@ -19,8 +19,8 @@ public class AddNewClassStep {
 	
 	@Given("Admin is on the Manage class page")
 	public void admin_is_on_the_manage_class_page() {
-		loginPage.enterUsername("Sdet@gmail.com");
-		loginPage.enterPassword("LmsHackathon@2024");
+		loginPage.enterUsername("ValidUsername");
+		loginPage.enterPassword("ValidPassword");
 		loginPage.clickLogin();
 		classPageValidationPage.clickOnClassButton();
 		

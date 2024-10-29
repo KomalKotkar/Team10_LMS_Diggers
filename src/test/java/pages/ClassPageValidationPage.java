@@ -1,13 +1,17 @@
 package pages;
 
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+
+import utilities.LoggerLoad;
 
 public class ClassPageValidationPage {
 
@@ -182,5 +186,37 @@ public class ClassPageValidationPage {
 		deleteIcon.isDisplayed();
 		return true;
 	}
+	
+	
+	// Sort the list in ascending order
+	
+		public List<String> getListInAscendingOrder(List<String> listOfDataToReorder){
+	        List<String> ascendingOrder = listOfDataToReorder.stream()
+	                .sorted(String.CASE_INSENSITIVE_ORDER)
+	                .collect(Collectors.toList());
+	        LoggerLoad.info("-------------------------------------------------");
+	        LoggerLoad.info("List in ascending order");
+	        LoggerLoad.info("-------------------------------------------------");
+	        for(String data : ascendingOrder) {
+	    		LoggerLoad.info(data);
+	    	}
+	        return ascendingOrder;
+		}
+	
+		// Sort the list in descending order
+	
+		public List<String> getListInDescendingOrder(List<String> listOfDataToReorder){
+			
+	        List<String> descendingOrder = listOfDataToReorder.stream()
+	        		.sorted(Collections.reverseOrder(String.CASE_INSENSITIVE_ORDER))
+	                .collect(Collectors.toList());
+	        LoggerLoad.info("-------------------------------------------------");
+	        LoggerLoad.info("List in descending order");
+	        LoggerLoad.info("-------------------------------------------------");
+	        for(String data : descendingOrder) {
+	        	LoggerLoad.info(data);
+	    	}
+	        return descendingOrder;
+		}
 
 }

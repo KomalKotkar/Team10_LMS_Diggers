@@ -28,11 +28,11 @@ Background: Admin Is on the Dashboard page after login
   	When Admin clicks the Class button on Navigation bar
   	Then Admin should see the showing x to y of z entries and enabled pagination controls under the data table
   
-  #	Bhagyashri will do sorting
-  #	Scenario: Validate the sort icon of all the field in datatable
-  #	Given Admin Is on the Dashboard page after login
-  #	When Admin clicks the Class button on Navigation bar
-  #	Then Admin should see the Sort icon of all the field in the datatable
+  	
+  	Scenario: Validate the sort icon of all the field in datatable
+  	Given Admin Is on the Dashboard page after login
+  	When Admin clicks the Class button on Navigation bar
+  	Then Admin should see the Sort icon of all the field in the datatable
 
   	Scenario: Validating the Delete button under the Manage class
   	Given Admin Is on the Dashboard page after login

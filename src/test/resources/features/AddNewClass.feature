@@ -23,8 +23,8 @@ Background: Admin is on the Manage class page
     #|class_mandatory_data		|1												|
     #|class_mandatory_data		|1												|
     #|class_mandatory_data		|2												|
-    
-    
+    #
+    #
 #	Scenario: Check no of classes value added when selecting class dates
     #Given Admin is on the Class Details Popup window
     #When Admin selects class date in date picker
