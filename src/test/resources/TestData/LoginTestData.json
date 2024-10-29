@@ -1,0 +1,16 @@
+{ 
+"ValidUsername" : "Sdet@gmail.com",
+"ValidPassword" : "LmsHackathon@2024",
+"InvalidUsername" : "Sdet.com",
+"InvalidPassword" : "LmsHackathon2024",
+"CompanyName" : "NumpyNinja",
+"CorrectSpelling_LoginRequest" : "Please login to LMS application",
+"CorrectSpelling_UserPlaceHolder" : "User",
+"CorrectSpelling_PasswordPlaceHolder" : "Password",
+"CorrectSpelling_LoginButton" : "Login",
+"CorrectSpelling_EnterUserNameRequest" : "Please enter your user name",
+"CorrectSpelling_EnterPasswordRequest" : "Please enter your password",
+"ExpectedErrorMessage" : "please check Adminname/password",
+"InvalidUrlLMS" : "https://lms-frontend-hackathon-oct25-173fe394c071.herokuapp.com",
+"ValidUrlLMS" : "https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login"
+}

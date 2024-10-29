@@ -1,18 +1,26 @@
 package pages;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.asserts.SoftAssert;
+
+import factory.DriverFactory;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utilities.LoggerLoad;
 
 
 public class ProgramPage {
 	
-public WebDriver driver;
+	SoftAssert Assert = new SoftAssert();
+private WebDriver driver = DriverFactory.getDriver();
+String programURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/program";
+String dashboardURL = "https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com";
 	
 	//constructor
-	public ProgramPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver,this);
+	public ProgramPage()
+	{
+				PageFactory.initElements(driver,this);
 	}
 
 	@FindBy(linkText="Program") WebElement programlink1;
@@ -29,7 +37,7 @@ public WebDriver driver;
     @FindBy (xpath="//input[@id='filterGlobal']") WebElement search;
     
     //Footer in total there are 33 programs
-    @FindBy(xpath="//div[@class='p-datatable-footer ng-star-inserted']") WebElement errMsg;
+    @FindBy(xpath="//div[@class='p-datatable-footer ng-star-inserted']") WebElement footerMsg;
     
     
     
@@ -46,6 +54,36 @@ public WebDriver driver;
 @FindBy (xpath="//button[@ng-reflect-label='Cancel']") WebElement radiobtn_cancel;
  @FindBy(id = "saveProgram") WebElement radiobtn_save;
  
+   public void getprogrampage() 
+    {		
+		driver.get(programURL);
+	}
+   
+   public void getdashboardpage() 
+    {		
+		driver.get(dashboardURL);
+		//String curnturl = driver.getCurrentUrl();
+		//if (curnturl == dashboardURL)
+			//LoggerLoad.info("Admin is on the dashboard page");
+	}
+   
+   public void getProgram()
+   {
+	 // programlink.click();
+	}
+   
+   public void verifyHeaderText(String expheaderTxt) {
+		//LoggerLoad.info("Admin see the header Text");
+	//	Assert.assertEquals(manageprogramheader.getText(), expheaderTxt);
+	}
+   
+   public void verifySearchText(String searchTxt) {
+		//LoggerLoad.info("Admin see the Search Text box has text as \"Search\"");
+		//Assert.assertEquals(search.getText(), searchTxt);
+	}
  
- 
+   public void verifyFooterText(String expfooterTxt) {
+		//LoggerLoad.info("Admin see the footer Text");
+		//Assert.assertEquals(footerMsg.getText(), expfooterTxt);
+	}
 }
