@@ -11,8 +11,8 @@ import io.cucumber.testng.CucumberOptions;
 				//"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
 				},
 		monochrome=false,  //console output color
-		features = {"src/test/resources/feature" }, //location of feature files
-		glue= {"api.StepDefinitions","hooks"},
+		features = "src/test/resources/features" , //location of feature files
+		glue= {"stepDefinitions","hooks"},
 		publish = true
 		)
 
