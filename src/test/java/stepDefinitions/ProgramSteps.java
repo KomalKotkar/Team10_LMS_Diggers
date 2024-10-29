@@ -5,6 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.ProgramPage;
+import org.openqa.selenium.WebDriver;
+import org.testng.asserts.SoftAssert;
 
 public class ProgramSteps {
 	
@@ -38,8 +40,8 @@ public class ProgramSteps {
 	/* --------- # Manage Program Page Validation ---------- */
 
 	@Then("Admin should see the heading {string}")
-	public void admin_should_see_the_heading(String string) {
-	    
+	public void admin_should_see_the_heading(String headerstring) {
+		ProgramPage.verifyHeaderText(headerstring);
 	}
 
 	@Then("Admin should see the module names as in order {string}")
@@ -73,8 +75,8 @@ public class ProgramSteps {
 	}
 
 	@Then("Admin should see Search bar with text as {string}")
-	public void admin_should_see_search_bar_with_text_as(String string) {
-	    
+	public void admin_should_see_search_bar_with_text_as(String search) {
+		ProgramPage.verifySearchText(search);
 	}
 
 	@Then("Admin should see data table with column header on the Manage Program Page as  Program Name, Program Description, Program Status, Edit\\/Delete")
@@ -108,9 +110,20 @@ public class ProgramSteps {
 	}
 
 	@Then("{string}{string}\".")
-	public void string_string(String string, String string2) {
+	public void string_string() {
+	  
+	}
+	
+	@Then("Admin should see the text as {string} along with Pagination icon below the table.")
+	public void admin_should_see_the_text_as_along_with_pagination_icon_below_the_table(String string) {
 	   
 	}
+	
+		@Then("Admin should see the footer as {string}.")
+	public void admin_should_see_the_footer_as(String expfooterTxt) {
+		//ProgramPage.verifyFooterText(expfooterTxt);
+	}
+
 /*------------------------------------------------------------------------------------------*/
 	/*-------  # Menu bar Program - Add New Program ----------------------   */
 	
